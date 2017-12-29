@@ -1,0 +1,21 @@
+.signupContent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.signupImageContainer{
+  display: flex;
+  width: 50%;
+  margin-top: 5%;
+}
+
+@media (max-width: 800px) {
+  .signupContent {
+    display: flex;
+    justify-content: center;
+  }
+  .signupImageContainer {
+    display: none;
+  }
+}
