@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { ThreeBounce } from 'better-react-spinkit'
 import Validator from 'validator'
+import { connect } from 'react-redux'
+import { mapStateToProps } from '../../utils/redux'
+
+import { signup } from '../../actions/signup'
 
 import './styles/SignupForm.scss'
 class SignupForm extends Component {
@@ -122,6 +128,7 @@ class SignupForm extends Component {
               value={this.state.confirmPassword}/>
           </div>
           <br/>
+          <p className='signupMember'>Already a member? <Link to='/login'>Login</Link></p>
           <button
             type='submit'>
             {this.state.isLoading ? <ThreeBounce color='white' size={18}/> : 'SIGNUP' }
@@ -135,4 +142,8 @@ class SignupForm extends Component {
   }
 }
 
-export default SignupForm
+SignupForm.contextTypes = {
+  router: PropTypes.object.isRequired
+}
+
+export default connect(mapStateToProps, { signup })(SignupForm)

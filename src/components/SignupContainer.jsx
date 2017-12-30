@@ -1,7 +1,10 @@
+// Node Modules
 import React, { Component } from 'react'
 
+// Import Components
 import SignupForm from './Signup/SignupForm.jsx'
 
+// Import images/styles
 import './styles/SignupContainer.scss'
 import bridgeSVG from '../images/camp.svg'
 

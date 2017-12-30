@@ -8,7 +8,7 @@ class Navigation extends Component {
     return (
       <div className='navigationContainer'>
         <span className='navigationContent'>
-          <h1>Coinasy</h1>
+          <Link to='/' style={{textDecoration: 'none'}}><h1>Coinasy</h1></Link>
           <span className='navigationLinkContainer'>
             <Link to='/login' className='navigationLink'>LOGIN</Link>
             <Link to='/signup' className='navigationLink'>SIGNUP</Link>
