@@ -1,5 +1,12 @@
 {
   "name": "site",
+  "proxy": {
+    "/": {
+        "target": "http://localhost:4000",
+        "pathRewrite": {"^/proxy" : ""},
+    "changeOrigin": true
+    }
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -29,10 +36,16 @@
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "better-react-spinkit": "^2.0.4",
     "css-loader": "^0.28.7",
+    "jsonwebtoken": "^8.1.0",
+    "prop-types": "^15.6.0",
     "react-ionicons": "^2.1.6",
+    "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "style-loader": "^0.19.1",
     "validator": "^9.2.0"
   }

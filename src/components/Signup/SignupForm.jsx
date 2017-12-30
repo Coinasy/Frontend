@@ -11,8 +11,8 @@ import { signup } from '../../actions/signup'
 import './styles/SignupForm.scss'
 class SignupForm extends Component {
   state = {
-    firstName: '',
-    lastName: '',
+    firstname: '',
+    lastname: '',
     username: '',
     email: '',
     password: '',
@@ -81,20 +81,20 @@ class SignupForm extends Component {
             <span className='signupLabel'>
               <label>{this.state.errors.firstName}</label>
               <input
-                name='firstName'
+                name='firstname'
                 type='text'
                 placeholder='First Name'
                 onChange={this.onChange}
-                value={this.state.firstName}/>
+                value={this.state.firstname}/>
             </span>
             <span className='signupLabel'>
               <label>{this.state.errors.lastName}</label>
               <input
-                name='lastName'
+                name='lastname'
                 type='text'
                 placeholder='Last Name'
                 onChange={this.onChange}
-                value={this.state.lastName}/>
+                value={this.state.lastname}/>
             </span>
           </span>
           <br/>

@@ -46,5 +46,13 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
-  devServer: { historyApiFallback: true } // need this for react router
+  devServer: { 
+    historyApiFallback: true, // need this for react router
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4000',
+        secure: false
+      }
+    }
+  }
 }
