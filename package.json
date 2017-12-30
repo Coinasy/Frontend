@@ -2,9 +2,11 @@
   "name": "site",
   "proxy": {
     "/": {
-        "target": "http://localhost:4000",
-        "pathRewrite": {"^/proxy" : ""},
-    "changeOrigin": true
+      "target": "http://localhost:4000",
+      "pathRewrite": {
+        "^/proxy": ""
+      },
+      "changeOrigin": true
     }
   },
   "version": "1.0.0",

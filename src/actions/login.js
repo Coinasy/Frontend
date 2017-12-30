@@ -17,7 +17,10 @@ export function login(data) {
       const token = res.data.token
       localStorage.setItem('jwtToken', token) // Add token to local storage
       setAuthorizationToken(token) // Add token to header of HTTP requests
-      dispatch(setCurrentUser(jwt.decode(token))) // Send action to reducers with correct type
+      // always save firstname of the person login
+      let decoded = jwt.decode(token)
+      localStorage.setItem('firstname', decoded.firstname)
+      dispatch(setCurrentUser(decoded)) // Send action to reducers with correct type
     })
   }
 }

@@ -12,9 +12,9 @@ export default class LoginContainer extends Component {
           <div className='signupImageContainer'>
             <span className='campContainer'>
               <img src={busSVG} alt=''/>
-            </span>
-            <LoginForm />            
+            </span>           
           </div>
+          <LoginForm /> 
         </span>
         
       </div>

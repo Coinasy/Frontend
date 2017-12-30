@@ -28,11 +28,11 @@ class SignupForm extends Component {
     if(Validator.isEmpty(data.username))
       errors.username = 'A username is required'
     if(Validator.isEmpty(data.password))
-      errors.password = 'Password required to login'
-    if(Validator.isEmpty(data.confirmPassword))
+      errors.password = 'Password required to signup'
+    if(data.confirmPassword != data.password)
       errors.password = 'Please confirm your password'
-    if(data.password.length < 6 )
-      errors.password = 'Password size must be greater than 6.'
+    if(data.password.length < 8 )
+      errors.password = 'Password size must be greater than 8.'
     if(data.password !== data.confirmPassword) {
       isValid = false
       errors.confirmPassword = "Passwords do not match."
@@ -61,12 +61,14 @@ class SignupForm extends Component {
     if(isValid) {
       this.props.signup(this.state)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.context.router.history.push('/')
       })
       .catch(err => {
         console.log(err)
+        this.setState({err, isLoading: false})
       })
+      
     } else {
       this.setState({ errors, isLoading: false })
     }
