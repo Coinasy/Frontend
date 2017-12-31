@@ -32,6 +32,10 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
       { //  loader configuration that does not scramble the image file names in the build task 
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
         loader: 'file-loader?name=[name].[ext]'  // <-- retain original file name
