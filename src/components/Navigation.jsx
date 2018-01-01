@@ -20,7 +20,7 @@ class Navigation extends Component {
 const AuthRoute = withRouter(() => {
   return localStorage.jwtToken ? (
     <span className='navigationLinkContainer'>
-      <Link to='/' className='navigationLink'>{localStorage.firstname}</Link>
+      <Link to='/' className='navigationLink'>{localStorage.firstname.toUpperCase()}</Link>
       <Link to='/' onClick={() => {localStorage.clear(); setAuthorizationToken(null)}} className='navigationLink'>LOGOUT</Link>
     </span>
   ) : (
