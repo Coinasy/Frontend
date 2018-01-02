@@ -17,6 +17,7 @@ import Navigation from './components/Navigation.jsx'
 import HomeContainer from './components/HomeContainer.jsx'
 import LoginContainer from './components/LoginContainer.jsx'
 import SignupContainer from './components/SignupContainer.jsx'
+import PoolContainer from './components/PoolContainer.jsx'
 
 // Initialize Redux 
 const store = createStore( // Make global store
@@ -46,6 +47,7 @@ class Routes extends Component {
               <Route exact path='/' component={HomeContainer} />
               <Route path='/login' component={LoginContainer} />
               <Route path='/signup' component={SignupContainer} />
+              <Route path='/pool' component={PoolContainer} />
               <Route path='/*' render={() => <h1>404 lol</h1>} />
             </Switch>
           </span>

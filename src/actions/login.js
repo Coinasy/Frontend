@@ -51,7 +51,8 @@ export function loginGoogle(data) {
 
 export function logout() {
   return dispatch => {
-    localStorage.removeItem('jwtToken')
+    // localStorage.removeItem('jwtToken')
+    localStorage.clear()
     setAuthorizationToken(false)
     dispatch(setCurrentUser({}))
   }

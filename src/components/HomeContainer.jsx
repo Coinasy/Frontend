@@ -11,7 +11,14 @@ class HomeContainer extends Component {
   render() {
     return (
       <div className='container'>
-          <MarketTable />
+        <MarketTable />
+        <span className='loginContent'>
+          <div className='signupImageContainer'>
+            <span className='campContainer'>
+              <img src={bridgeSVG} alt=''/>
+            </span>           
+          </div>
+        </span>
       </div>
     )
   }

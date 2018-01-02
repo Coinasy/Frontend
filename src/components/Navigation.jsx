@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import setAuthorizationToken from '../api/setAuth'
 
+import {logout} from '../actions/login'
+
 import './styles/Navigation.scss'
 
 class Navigation extends Component {
@@ -20,8 +22,8 @@ class Navigation extends Component {
 const AuthRoute = withRouter(() => {
   return localStorage.jwtToken ? (
     <span className='navigationLinkContainer'>
-      <Link to='/' className='navigationLink'>{localStorage.firstname.toUpperCase()}</Link>
-      <Link to='/' onClick={() => {localStorage.clear(); setAuthorizationToken(null)}} className='navigationLink'>LOGOUT</Link>
+      <Link to='/pool' className='navigationLink'>{localStorage.firstname.toUpperCase()}</Link>
+      <Link to='/' onClick={logout()} className='navigationLink'>LOGOUT</Link>
     </span>
   ) : (
     <span className='navigationLinkContainer'>
